@@ -1,21 +1,19 @@
 package racetrack
 
 class Registration {
-    String name
-    Date dateOfBirth
-    String gender
-    String address
-    String city
-    String state
-    String zipcode
-    String email
-    Date dateCreated
-    Date lastUpdated
-
-    static mapping = {
-        autoTimestamp false
+    static constraints = {
+        race()
+        runner()
+        paid()
+        dateCreated()
     }
 
-    static contraints = {
+    static belongsTo = [race:Race, runner:Runner]
+
+    Boolean paid
+    Date dateCreated
+
+    String toString(){
+        "${id}, ${runner.lastName}"
     }
 }

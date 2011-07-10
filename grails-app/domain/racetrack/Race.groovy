@@ -13,6 +13,8 @@ class Race {
         sort "startDate"
     }
 
+    static hasMany = [registrations:Registration]
+
     static constraints = {
         name(blank:false, maxSize:50)
         startDate()
@@ -21,5 +23,9 @@ class Race {
         distance(min:0.0)
         cost(min:0.0, max:100.0)
         maxRunners(min:0, max:100000)
+    }
+
+    String toString() {
+        return "${name}, ${startDate.format('dd/MM/yyy')}"
     }
 }
