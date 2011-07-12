@@ -17,7 +17,7 @@ class Race {
 
     static constraints = {
         name(blank:false, maxSize:50)
-        startDate()
+        startDate(validator: {return (it > new Date())})
         city()
         state(inList:["GA", "NC", "SC", "VA"])
         distance(min:0.0)
