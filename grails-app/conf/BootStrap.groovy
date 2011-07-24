@@ -2,6 +2,7 @@ import racetrack.Race
 import racetrack.Registration
 import racetrack.Runner
 import grails.util.GrailsUtil
+import racetrack.User
 
 class BootStrap {
 
@@ -10,6 +11,21 @@ class BootStrap {
 
         switch (GrailsUtil.environment) {
             case "development":
+
+                // Users
+                def admin = new User(login:"admin", password:"wordpass", role:"admin")
+                admin.save()
+                if(admin.hasErrors()) {
+                    println admin.errors
+                }
+
+                def jdoe = new User(login:"jdoe", password:"password", role:"user")
+                jdoe.save()
+                if(jdoe.hasErrors()) {
+                    println jdoe.errors
+                }
+
+                // Runners
                 def jane = new Runner(
                         firstName: "Jane",
                         lastName: "Doe",
@@ -29,6 +45,7 @@ class BootStrap {
                     println jane.lastName + " saved"
                 }
 
+                // Races
                 def trot = new Race(
                         name: "Turkey Trot",
                         startDate: (new Date() + 90),
@@ -43,6 +60,7 @@ class BootStrap {
                     println trot.errors
                 }
 
+                // Registrations
                 def reg = new Registration(
                         paid: false,
                         runner: jane,

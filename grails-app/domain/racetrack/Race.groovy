@@ -15,6 +15,10 @@ class Race {
 
     static hasMany = [registrations:Registration]
 
+    BigDecimal inMiles() {
+        return distance * 0.6214
+    }
+
     static constraints = {
         name(blank:false, maxSize:50)
         startDate(validator: {return (it > new Date())})
