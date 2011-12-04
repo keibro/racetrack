@@ -6,12 +6,12 @@ class User {
     String role = "user"
 
     static constraints = {
-        login(blank:false, nullable:false, unique:true)
-        password(blank:false, password:true)
-        role(inList:["admin","user"])
+        login(blank: false, nullable: false, unique: true)
+        password(blank: false, password: true)
+        role(inList: ["admin", "user"])
     }
 
-    static transients =['admin']
+    static transients = ['admin']
 
     boolean isAdmin() {
         return role == "admin"
@@ -19,5 +19,9 @@ class User {
 
     String toString() {
         login
+    }
+
+    def beforeInsert = {
+        password = password.encodeAsSHA()
     }
 }
