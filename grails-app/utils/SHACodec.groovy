@@ -1,5 +1,3 @@
-package racetrack
-
 import java.security.MessageDigest
 
 
