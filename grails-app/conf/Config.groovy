@@ -53,7 +53,7 @@ grails.plugin.heroku.datasource.disableTimeoutAutoconfiguration = false
 // set per-environment serverURL stem for creating absolute links
 environments {
     production {
-        grails.serverURL = "http://www.changeme.com"
+        grails.serverURL = "http://furious-planet-8780.herokuapp.com/"
     }
     development {
         grails.serverURL = "http://localhost:8080/${appName}"
