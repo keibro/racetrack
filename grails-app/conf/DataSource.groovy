@@ -31,11 +31,12 @@ environments {
 
             dialect = org.hibernate.dialect.MySQL5InnoDBDialect
 
-            uri = new URI(System.env.CLEARDB_DATABASE_URL_A?:"mysql://keith.brophy@gmail.com:tndFRMGBZ07apU@localhost/test")
+            uri = new URI(System.env.CLEARDB_DATABASE_URL_A?:"mysql://test:test@localhost/test")
 
             url = "jdbc:mysql://"+uri.host+uri.path
             username = uri.userInfo.split(":")[0]
             password = uri.userInfo.split(":")[1]
+
         }
     }
 }
