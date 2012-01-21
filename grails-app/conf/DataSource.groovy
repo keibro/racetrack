@@ -29,13 +29,13 @@ environments {
         dataSource {
             dbCreate = "update"
 
-            dialect = org.hibernate.dialect.MySQLDialect
+            dialect = org.hibernate.dialect.MySQL5InnoDBDialect
 
-            uri = new URI(System.env.DATABASE_URL?:"mysql://e27c741202e7fa:ad8c85e5@us-mm-auto-dca-01.cleardb.com/heroku_e9c90e66920c016")
+            uri = new URI(System.env.CLEARDB_DATABASE_URL_A?:"mysql://keith.brophy@gmail.com:tndFRMGBZ07apU@localhost/test")
 
-            url = "jdbc:"+uri.host+uri.path
-//            username = uri.userInfo.split(":")[0]
-//            password = uri.userInfo.split(":")[1]
+            url = "jdbc:mysql://"+uri.host+uri.path
+            username = uri.userInfo.split(":")[0]
+            password = uri.userInfo.split(":")[1]
         }
     }
 }
