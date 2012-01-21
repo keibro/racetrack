@@ -28,7 +28,14 @@ environments {
     production {
         dataSource {
             dbCreate = "update"
-            url = "jdbc:mysql://localhost:3306/racetrack_prd?autoreconnect=true"
+
+            dialect = org.hibernate.dialect.MySQLDialect
+
+            uri = new URI(System.env.DATABASE_URL?:"mysql://e27c741202e7fa:ad8c85e5@us-mm-auto-dca-01.cleardb.com/heroku_e9c90e66920c016")
+
+            url = "jdbc:"+uri.host+uri.path
+//            username = uri.userInfo.split(":")[0]
+//            password = uri.userInfo.split(":")[1]
         }
     }
 }

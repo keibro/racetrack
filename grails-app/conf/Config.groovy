@@ -34,7 +34,7 @@ grails.mime.types = [ html: ['text/html','application/xhtml+xml'],
 grails.views.default.codec = "none" // none, html, base64
 grails.views.gsp.encoding = "UTF-8"
 grails.converters.encoding = "UTF-8"
-// enable Sitemesh preprocessing of GSP pages
+// enable Sitemesh preprocessing of GSP pages                                           §
 grails.views.gsp.sitemesh.preprocess = true
 // scaffolding templates configuration
 grails.scaffolding.templates.domainSuffix = 'Instance'
@@ -47,6 +47,8 @@ grails.enable.native2ascii = true
 grails.logging.jul.usebridge = true
 // packages to include in Spring bean scanning
 grails.spring.bean.packages = []
+
+grails.plugin.heroku.datasource.disableTimeoutAutoconfiguration = false
 
 // set per-environment serverURL stem for creating absolute links
 environments {
