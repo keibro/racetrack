@@ -1,6 +1,8 @@
 package racetrack
 
 class Race {
+    static searchable = true
+  
 	String name
 	Date startDate
 	String city
