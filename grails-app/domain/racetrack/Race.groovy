@@ -11,8 +11,6 @@ class Race {
 	BigDecimal cost
 	Integer maxRunners = 100000
 
-    static searchable = true
-
     static mapping = {
         sort "startDate"
     }
