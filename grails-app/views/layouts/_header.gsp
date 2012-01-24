@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 
+<g:render template="/layouts/raceSearch" />
+
 <div id="header">
     <p><a class="header-main" href="${resource(dir: '')}">RaceTrack</a></p>
 
