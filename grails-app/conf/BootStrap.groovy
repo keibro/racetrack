@@ -10,7 +10,7 @@ class BootStrap {
         println "BootStrap init ..."
 
         switch (GrailsUtil.environment) {
-            case "production":
+            case "development":
 
                 // Users
                 def admin = new User(login:"admin", password:"wordpass", role:"admin")
